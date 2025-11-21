@@ -1,3 +1,4 @@
+import { useQueryState } from "nuqs";
 import { CloudflareContext } from "workers/app";
 
 import type { Route } from "./+types/index";
@@ -14,7 +15,20 @@ export function loader({ context }: Route.LoaderArgs) {
 }
 
 export default function Home({ loaderData }: Route.ComponentProps) {
+  const [q, setQ] = useQueryState("q", {
+    history: "replace",
+    defaultValue: loaderData.message,
+    clearOnDefault: false,
+  });
+
   return (
-    <div className="flex h-screen w-screen items-center justify-center">{loaderData.message}</div>
+    <div className="flex h-screen w-screen flex-col items-center justify-center">
+      <input
+        type="text"
+        value={q}
+        onChange={(e) => setQ(e.target.value)}
+        className="w-96 rounded border border-gray-300 p-1"
+      />
+    </div>
   );
 }
