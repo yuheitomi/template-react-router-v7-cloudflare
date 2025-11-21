@@ -1,6 +1,6 @@
 import { CloudflareContext } from "workers/app";
 
-import type { Route } from "./+types/home";
+import type { Route } from "./+types/index";
 import { Welcome } from "../welcome/welcome";
 
 export function meta(_: Route.MetaArgs) {
