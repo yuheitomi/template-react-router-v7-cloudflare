@@ -1,7 +1,6 @@
 import { CloudflareContext } from "workers/app";
 
 import type { Route } from "./+types/index";
-import { Welcome } from "../welcome/welcome";
 
 export function meta(_: Route.MetaArgs) {
   return [
@@ -15,5 +14,7 @@ export function loader({ context }: Route.LoaderArgs) {
 }
 
 export default function Home({ loaderData }: Route.ComponentProps) {
-  return <Welcome message={loaderData.message} />;
+  return (
+    <div className="flex h-screen w-screen items-center justify-center">{loaderData.message}</div>
+  );
 }
