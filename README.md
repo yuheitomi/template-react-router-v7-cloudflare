@@ -15,6 +15,7 @@ A modern, production-ready template for building full-stack React applications u
 ## Pre-installed Libraries
 
 - [react-router-auto-routes](https://github.com/nickmccurdy/react-router-auto-routes) - File-based routing for React Router
+- [Hono](https://hono.dev/) - Ultrafast web framework for building type-safe APIs (configured at `/api/*`)
 - [Zod](https://zod.dev/) - TypeScript-first schema validation
 - [nuqs](https://nuqs.47ng.com/) - Type-safe URL search params state management
 
