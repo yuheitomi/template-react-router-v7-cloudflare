@@ -1,6 +1,5 @@
 import { createContext, createRequestHandler, RouterContextProvider } from "react-router";
-
-import { getHonoApp } from "../server";
+import { getHonoApp } from "server";
 
 export const CloudflareContext = createContext<{
   env: Env;
