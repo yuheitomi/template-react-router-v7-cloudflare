@@ -25,7 +25,7 @@ Let the user to choose preferred base color (neutral, gray, zinc, stone, slate)
 
 ### 2. Install Base UI
 
-Install the Base UI package. Ensure to use `@base-ui/react`.
+Install the Base UI package. Ensure to use `@base-ui/react` (not `@base-ui-components/react`)
 
 ```bash
 pnpm add @base-ui/react
