@@ -1,5 +1,6 @@
 import { useQueryState } from "nuqs";
-import { CloudflareContext } from "workers/app";
+
+import { CfContext, getCfContext } from "~/lib/cloudflare/context";
 
 import type { Route } from "./+types/index";
 
@@ -11,7 +12,7 @@ export function meta(_: Route.MetaArgs) {
 }
 
 export function loader({ context }: Route.LoaderArgs) {
-  return { message: context.get(CloudflareContext).env.VALUE_FROM_CLOUDFLARE };
+  return { message: getCfContext(context).env.VALUE_FROM_CLOUDFLARE };
 }
 
 export default function Home({ loaderData }: Route.ComponentProps) {
