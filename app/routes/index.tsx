@@ -1,6 +1,6 @@
 import { useQueryState } from "nuqs";
 
-import { CfContext, getCfContext } from "~/lib/cloudflare/context";
+import { getCfContext } from "~/lib/cloudflare/context";
 
 import type { Route } from "./+types/index";
 

@@ -22,7 +22,6 @@ export default async function handleRequest(
         // Log streaming rendering errors from inside the shell.  Don't log
         // errors encountered during initial shell rendering since they'll
         // reject and get logged in handleDocumentRequest.
-        // biome-ignore lint/nursery/noUnnecessaryConditions: don't know why this is necessary
         if (shellRendered) {
           console.error(error);
         }
