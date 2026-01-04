@@ -1,4 +1,4 @@
-import type { EntryContext, RouterContext } from "react-router";
+import type { EntryContext, RouterContextProvider } from "react-router";
 import { ServerRouter } from "react-router";
 import { isbot } from "isbot";
 import { renderToReadableStream } from "react-dom/server";
@@ -8,7 +8,7 @@ export default async function handleRequest(
   responseStatusCode: number,
   responseHeaders: Headers,
   routerContext: EntryContext,
-  _loadContext: RouterContext,
+  _loadContext: RouterContextProvider,
 ) {
   let shellRendered = false;
   let newResponseStatusCode = responseStatusCode;
