@@ -1,6 +1,15 @@
-import { env } from "cloudflare:workers";
 import { hc } from "hono/client";
 
 import type { AppType } from "./hono";
 
-export const client = hc<AppType>(env.VITE_API_URL ?? "http://localhost:5173");
+const getBaseUrl = () => {
+  // clientLoader only runs on the client, so window is always defined
+  if (typeof window === "undefined") {
+    throw new Error("getClient() can only be used in client-side code (clientLoader)");
+  }
+  return window.location.origin;
+};
+
+export const getClient = () => {
+  return hc<AppType>(getBaseUrl());
+};
