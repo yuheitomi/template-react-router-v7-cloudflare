@@ -12,7 +12,7 @@ const app = new Hono<{ Bindings: Env }>().get("/hono", (c) => {
 });
 
 export const getHonoApp = (
-  handler: (request: Request, env: Env, ctx: ExecutionContext) => Promise<Response>
+  handler: (request: Request, env: Env, ctx: ExecutionContext) => Promise<Response>,
 ) => {
   app.all("*", async (context) => {
     return handler(context.req.raw, context.env, context.executionCtx as ExecutionContext);

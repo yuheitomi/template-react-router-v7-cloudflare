@@ -509,7 +509,7 @@ export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
 // app/routes/api.products.$id.tsx
 export async function loader({ params }: Route.LoaderArgs) {
   const product = await db.product.findUnique({
-    where: { id: params.id }
+    where: { id: params.id },
   });
 
   if (!product) {
@@ -519,7 +519,7 @@ export async function loader({ params }: Route.LoaderArgs) {
   return data(product, {
     headers: {
       "Cache-Control": "public, max-age=3600", // Cache for 1 hour
-      "ETag": `"${product.updatedAt.getTime()}"`,
+      ETag: `"${product.updatedAt.getTime()}"`,
     },
   });
 }
@@ -527,7 +527,7 @@ export async function loader({ params }: Route.LoaderArgs) {
 // Conditional requests
 export async function loader({ request, params }: Route.LoaderArgs) {
   const product = await db.product.findUnique({
-    where: { id: params.id }
+    where: { id: params.id },
   });
 
   if (!product) {
@@ -544,7 +544,7 @@ export async function loader({ request, params }: Route.LoaderArgs) {
   return data(product, {
     headers: {
       "Cache-Control": "public, max-age=3600",
-      "ETag": etag,
+      ETag: etag,
     },
   });
 }

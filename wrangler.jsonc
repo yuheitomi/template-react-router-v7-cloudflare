@@ -1,13 +1,13 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "react-router-app",
-  "compatibility_date": "2025-11-18",
+  "compatibility_date": "2026-02-24",
   "compatibility_flags": ["nodejs_compat"],
   "observability": {
-    "enabled": true
+    "enabled": true,
   },
   "main": "./workers/app.ts",
   "vars": {
-    "VALUE_FROM_CLOUDFLARE": "Hello from Cloudflare"
-  }
+    "VALUE_FROM_CLOUDFLARE": "Hello from Cloudflare",
+  },
 }
